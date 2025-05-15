@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UML Class Diagram</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+        mermaid.initialize({ startOnLoad: true });
+</script>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .diagram-container {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+</style>
+</head>
+<body>
+<h1>UML Class Diagram</h1>
+<div class="diagram-container">
+<div class="mermaid">
+classDiagram
+    direction LR
+    class Customer {
+        name
+        getDetails()
+    }
+    class Order {
+        orderId
+        calculateTotal()
+    }
+    Order "1" -- "*" OrderItem
+    class OrderItem {
+        itemId
+        getPrice()
+    }
+    OrderItem "*" -- "1" Product
+    class Product  {
+        productId
+        getDescription()
+    }
+</div>
+</div>
+</body>
+</html>
